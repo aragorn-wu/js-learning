@@ -1,0 +1,60 @@
+<!DocumentType html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<script>
+    document.write(Date());
+</script>
+<p id="p1">Hello World!</p>
+<script>
+    document.getElementById("p1").innerHTML = "New text!"
+</script>
+
+<img id="image" src="../pictures/ct_htmltree.gif"/>
+<script>
+    document.getElementById("image").src = "../pictures/shanghai_lupu_bridge.jpg"
+</script>
+
+<p id="p2">Hello world</p>
+<script>
+    document.getElementById("p2").style.color = "blue";
+</script>
+
+<h1 id="id1">My Heading 1</h1>
+<button type="button" onclick="document.getElementById('id1').style.color='red'"></button>
+
+<h2 onclick="this.innerHTML='谢谢'">请点击我~~</h2>
+<script>
+    function changeText(id) {
+        id.innerHTML = "谢谢"
+    }
+</script>
+<h3 onclick="changeText(this)">xxxxxxxxxxxa</h3>
+
+<script>
+    function addNodes() {
+        var para=document.createElement("p");
+        var node=document.createTextNode("这是新段落。");
+        para.appendChild(node);
+
+        document.write(para)
+    }
+</script>
+
+
+<div id="div1">
+    <p id="p11">这是一个段落。</p>
+    <p id="p22">这是另一个段落。</p>
+</div>
+<script>
+    var parent=document.getElementById("div1");
+    var child=document.getElementById("p11");
+    parent.removeChild(child)
+</script>
+<button onclick="addNodes()"></button>
+
+</body>
+
+</html>
